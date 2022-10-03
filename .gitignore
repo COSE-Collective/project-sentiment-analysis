@@ -5,6 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
+*.zip
 
 # Distribution / packaging
 .Python
@@ -127,3 +128,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+glove.42B.300d.zip

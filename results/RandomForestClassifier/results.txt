@@ -1,0 +1,19 @@
+----------MODEL DESCRIPTION----------
+Model name: RandomForestClassifier
+
+---------------RESULTS---------------
+The test accuracy: 0.9159140276666285
+The test MSE: 0.11089516405624786
+The test precision: 0.9156307512704656
+The test recall: 0.9143893178210057
+The test F1_score: 0.9149507195507166
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.92      0.94      0.93      6447
+           1       0.91      0.89      0.90      5195
+           2       0.92      0.91      0.92      5852
+
+    accuracy                           0.92     17494
+   macro avg       0.92      0.91      0.91     17494
+weighted avg       0.92      0.92      0.92     17494
