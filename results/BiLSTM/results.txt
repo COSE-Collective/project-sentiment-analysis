@@ -1,22 +1,22 @@
 ----------MODEL DESCRIPTION----------
 Model name: BiLSTM
-Number of epochs: 5
+Number of epochs: 90
 Number of layers: 4
 
 ---------------RESULTS---------------
-The test loss: 0.33435875177383423
-The test accuracy: 0.9250302297460702
-The test MSE: 0.10278113663845223
-The test precision: 0.9249604483632735
-The test recall: 0.9253169154770986
-The test F1_score: 0.9250010511141958
+The test loss: 0.3657422959804535
+The test accuracy: 0.9467956469165659
+The test MSE: 0.06771463119709795
+The test precision: 0.9467987490712995
+The test recall: 0.9471686462533144
+The test F1_score: 0.9468832358472312
 Classification Report:
               precision    recall  f1-score   support
 
-           0       0.91      0.94      0.93       266
-           1       0.94      0.92      0.93       285
-           2       0.92      0.91      0.92       276
+           0       0.94      0.96      0.95       266
+           1       0.96      0.93      0.94       285
+           2       0.94      0.95      0.94       276
 
-    accuracy                           0.93       827
-   macro avg       0.92      0.93      0.93       827
-weighted avg       0.93      0.93      0.93       827
+    accuracy                           0.95       827
+   macro avg       0.95      0.95      0.95       827
+weighted avg       0.95      0.95      0.95       827

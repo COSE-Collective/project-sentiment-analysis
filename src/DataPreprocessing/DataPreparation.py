@@ -1,3 +1,10 @@
+import nltk
+nltk.download('averaged_perceptron_tagger')
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+nltk.download('punkt')
+nltk.download('stopwords')
+
 import numpy as np
 import pandas as pd
 import emoji
@@ -7,7 +14,7 @@ from nltk.tokenize import word_tokenize
 from pywsd.utils import lemmatize_sentence
 import string
 import re
-
+import nltk
 
     
 def remove_stopwords(i):

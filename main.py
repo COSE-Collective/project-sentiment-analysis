@@ -37,10 +37,10 @@ def main(args):
     else:
         print('Error: Model does not exist')
         return
-    history, X_test= model.Train()
+    history, X_test, epochs= model.Train()
     loaded_model = DataLoading.LoadModel(args.model_name)
     print('Results estimation')
-    ResultsEvaluation.Results(loaded_model, X_test, Y_test, args.model_name, history)
+    ResultsEvaluation.Results(loaded_model, X_test, Y_test, args.model_name, history,epochs)
     print('Completed')
     
 

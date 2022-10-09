@@ -2,7 +2,7 @@ from sklearn.metrics import accuracy_score,f1_score, classification_report,mean_
 import src.Evaluation.Plotting as Plotting
 import numpy as np
 from contextlib import redirect_stdout
-def Results(model, X_test, Y_test, modelName, history=None):
+def Results(model, X_test, Y_test, modelName, history=None,epochs=None):
     Y_predict=model.predict(X_test)
     res_file = open('results/'+modelName+ '/results.txt', 'w')
     res_file.write('----------MODEL DESCRIPTION----------')
@@ -18,10 +18,10 @@ def Results(model, X_test, Y_test, modelName, history=None):
         Score = model.evaluate(X_test, Y_test, verbose=1)
         n_layers=len(model.layers)
         print("Number of layers: "+str(n_layers))
-        hist = history.history['val_accuracy']
-        n_epochs_best = np.argmax(hist)
-        print("Number of ephochs: "+str(n_epochs_best))
-        res_file.write('\nNumber of epochs: '+str(n_epochs_best))
+#         hist = history.history['val_accuracy']
+#         n_epochs_best = np.argmax(hist)
+        print("Number of ephochs: "+str(epochs))
+        res_file.write('\nNumber of epochs: '+str(epochs))
         res_file.write('\nNumber of layers: '+str(n_layers))
         print("Loss: "+ str(Score[0]))
     

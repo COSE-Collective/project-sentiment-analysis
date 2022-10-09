@@ -63,14 +63,15 @@ class BiLSTM:
         model.summary()
         optimizer = optimizers.Adam(learning_rate=0.005)
         model.compile(loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False), optimizer = optimizer, metrics = ['accuracy'])
-
-        epochs = 20
         batch_size = 128
-        callback = tf.keras.callbacks.EarlyStopping(patience = 2, restore_best_weights = False, monitor = "val_loss")
-        history = model.fit(self.X_train, self.Y_train, epochs = epochs,batch_size = batch_size, validation_data = (self.X_val, self.Y_val),callbacks = [callback])
+        epochs = 90
+        history = model.fit(self.X_train, self.Y_train, epochs = epochs,batch_size = batch_size, validation_data = (self.X_val, self.Y_val))
+#         epochs = 20
+#         callback = tf.keras.callbacks.EarlyStopping(patience = 2, restore_best_weights = False, monitor = "val_loss")
+#         history = model.fit(self.X_train, self.Y_train, epochs = epochs,batch_size = batch_size, validation_data = (self.X_val, self.Y_val),callbacks = [callback])
         print('Model built successfully')
         print('Model saving')
         model.save('src/Models/BiLSTM/BiLSTM.h5')
         print('Model saved')
-        return history, self.X_test
+        return history, self.X_test, epochs
 
