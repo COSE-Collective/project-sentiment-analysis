@@ -53,5 +53,5 @@ class LSTM:
         print('Model saving')
         model.save('src/Models/LSTM/LSTM.h5')
         print('Model saved')
-        return history, self.X_test
+        return history, self.X_test, epochs
 

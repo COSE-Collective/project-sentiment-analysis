@@ -56,19 +56,20 @@ class BiLSTM:
         print('BiLSTM model training')
         model = tf.keras.Sequential([
             tf.keras.layers.Embedding(vocab_size, n_dim, input_length = self.X_train.shape[1],weights = [embedding_matrix ] , trainable = True),
-            tf.keras.layers.SpatialDropout1D(0.2),
             tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(lstm_out, dropout = 0.3, recurrent_dropout = 0.2)),
+            tf.keras.layers.Dropout(0.2),
+            tf.keras.layers.Dense(64,activation = 'relu'),
             tf.keras.layers.Dense(3,activation = 'softmax')
         ])
         model.summary()
         optimizer = optimizers.Adam(learning_rate=0.005)
         model.compile(loss = tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False), optimizer = optimizer, metrics = ['accuracy'])
         batch_size = 128
-        epochs = 90
-        history = model.fit(self.X_train, self.Y_train, epochs = epochs,batch_size = batch_size, validation_data = (self.X_val, self.Y_val))
-#         epochs = 20
-#         callback = tf.keras.callbacks.EarlyStopping(patience = 2, restore_best_weights = False, monitor = "val_loss")
-#         history = model.fit(self.X_train, self.Y_train, epochs = epochs,batch_size = batch_size, validation_data = (self.X_val, self.Y_val),callbacks = [callback])
+#         epochs = 90
+#         history = model.fit(self.X_train, self.Y_train, epochs = epochs,batch_size = batch_size, validation_data = (self.X_val, self.Y_val))
+        epochs = 20
+        callback = tf.keras.callbacks.EarlyStopping(patience = 2, restore_best_weights = False, monitor = "val_loss")
+        history = model.fit(self.X_train, self.Y_train, epochs = epochs,batch_size = batch_size, validation_data = (self.X_val, self.Y_val),callbacks = [callback])
         print('Model built successfully')
         print('Model saving')
         model.save('src/Models/BiLSTM/BiLSTM.h5')

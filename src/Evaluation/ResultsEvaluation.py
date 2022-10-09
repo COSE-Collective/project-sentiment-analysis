@@ -18,10 +18,10 @@ def Results(model, X_test, Y_test, modelName, history=None,epochs=None):
         Score = model.evaluate(X_test, Y_test, verbose=1)
         n_layers=len(model.layers)
         print("Number of layers: "+str(n_layers))
-#         hist = history.history['val_accuracy']
-#         n_epochs_best = np.argmax(hist)
-        print("Number of ephochs: "+str(epochs))
-        res_file.write('\nNumber of epochs: '+str(epochs))
+        hist = history.history['val_accuracy']
+        epochs = np.argmax(hist)
+        print("The best number of ephochs: "+str(epochs))
+        res_file.write('\nThe best number of epochs: '+str(epochs))
         res_file.write('\nNumber of layers: '+str(n_layers))
         print("Loss: "+ str(Score[0]))
     
