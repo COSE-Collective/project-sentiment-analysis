@@ -4,19 +4,19 @@ The best number of epochs: 3
 Number of layers: 6
 
 ---------------RESULTS---------------
-The test loss: 0.3692063093185425
-The test accuracy: 0.9117291414752116
-The test MSE: 0.10761789600967352
-The test precision: 0.91269668902211
-The test recall: 0.9126802513530202
-The test F1_score: 0.9118667703172906
+The test loss: 0.877838134765625
+The test accuracy: 0.7149736299013988
+The test MSE: 0.32332033937170374
+The test precision: 0.7163211143101044
+The test recall: 0.7183732666380548
+The test F1_score: 0.7172313789894736
 Classification Report:
               precision    recall  f1-score   support
 
-           0       0.92      0.94      0.93       266
-           1       0.94      0.86      0.90       285
-           2       0.88      0.93      0.91       276
+           0       0.72      0.71      0.71      1267
+           1       0.69      0.67      0.68      1715
+           2       0.74      0.77      0.75      1379
 
-    accuracy                           0.91       827
-   macro avg       0.91      0.91      0.91       827
-weighted avg       0.91      0.91      0.91       827
+    accuracy                           0.71      4361
+   macro avg       0.72      0.72      0.72      4361
+weighted avg       0.71      0.71      0.71      4361

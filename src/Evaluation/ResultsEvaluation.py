@@ -55,5 +55,3 @@ def Results(model, X_test, Y_test, modelName, history=None,epochs=None):
     pred_f.write('----------PREDICTION----------\n')
     pred_f.write(str(Y_predict))
     pred_f.close()
-
-    

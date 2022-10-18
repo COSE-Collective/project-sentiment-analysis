@@ -75,4 +75,3 @@ class BiLSTM:
         model.save('src/Models/BiLSTM/BiLSTM.h5')
         print('Model saved')
         return history, self.X_test, epochs
-
