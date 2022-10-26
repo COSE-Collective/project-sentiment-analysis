@@ -53,5 +53,5 @@ def Results(model, X_test, Y_test, modelName, history=None,epochs=None):
     res_file.close()
     pred_f = open('results/'+modelName+  '/predictions.txt', 'w')
     pred_f.write('----------PREDICTION----------\n')
-    pred_f.write(str(Y_predict))
+    np.savetxt(pred_f, Y_predict)  
     pred_f.close()

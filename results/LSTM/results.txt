@@ -1,22 +1,22 @@
 ----------MODEL DESCRIPTION----------
 Model name: LSTM
-The best number of epochs: 3
+The best number of epochs: 4
 Number of layers: 6
 
 ---------------RESULTS---------------
-The test loss: 0.877838134765625
-The test accuracy: 0.7149736299013988
-The test MSE: 0.32332033937170374
-The test precision: 0.7163211143101044
-The test recall: 0.7183732666380548
-The test F1_score: 0.7172313789894736
+The test loss: 1.0222196578979492
+The test accuracy: 0.7048842008713598
+The test MSE: 0.33386837881219905
+The test precision: 0.706537763497201
+The test recall: 0.7109093652885896
+The test F1_score: 0.706914896856032
 Classification Report:
               precision    recall  f1-score   support
 
-           0       0.72      0.71      0.71      1267
-           1       0.69      0.67      0.68      1715
-           2       0.74      0.77      0.75      1379
+           0       0.73      0.70      0.71      1267
+           1       0.69      0.63      0.66      1715
+           2       0.70      0.81      0.75      1379
 
-    accuracy                           0.71      4361
-   macro avg       0.72      0.72      0.72      4361
-weighted avg       0.71      0.71      0.71      4361
+    accuracy                           0.70      4361
+   macro avg       0.71      0.71      0.71      4361
+weighted avg       0.70      0.70      0.70      4361
