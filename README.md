@@ -3,14 +3,14 @@ This repository contains 4 models (LSTM, BiLSTM, BERT, RoBERTa) for sentiment an
 > ### Project structure
 > #### There are 3 folders and 1 file at this level. Let's talk about the purpose of each of those.
 > - ./datasets -> Contains 10 file: 5 original datasets, 2 preprocessed training and 3 preprocessed testing datasets. The datasets were taken from Kaggle:
->  + https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis 
->  + https://www.kaggle.com/datasets/abhi8923shriv/sentiment-analysis-dataset?select=testdata.manual.2009.06.14.csv
+>   + https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis 
+>   + https://www.kaggle.com/datasets/abhi8923shriv/sentiment-analysis-dataset?select=testdata.manual.2009.06.14.csv
 > - ./results -> This folder contains the results of models evaluation and divided into 4 subfolders for each model. Each model has the following results: file with probability values(./probabilities.txt), file with prediction values(./predictions.txt), file with results(./results.txt), accuracy and loss  plots (./plots/accuracy.png, ./plots/loss.png)
 > - ./src -> This folder contains following subfolders:
->  + ./DataPreprocessing-folder with the files for preprocessing the datasets
->  + ./Evaluation-folder with the files for results evaluation and drawing plots
->  + ./DataLoading-folder with the file for data and models loading
->  + ./Models-folder with the files for models building
+>   + ./DataPreprocessing-folder with the files for preprocessing the datasets
+>   + ./Evaluation-folder with the files for results evaluation and drawing plots
+>   + ./DataLoading-folder with the file for data and models loading
+>   + ./Models-folder with the files for models building
 > - main.py -> Is the execution script that will parse the commands you give from the terminal to your code.
 To execute the main.py file the command must have the argument --model_name <model_name>, where <model_name> has 4 options: LSTM, BiLSTM, BERT, RoBERTa
 
