@@ -2,7 +2,6 @@ from sklearn.metrics import accuracy_score, f1_score, classification_report, mea
     recall_score
 import src.Evaluation.Plotting as Plotting
 import numpy as np
-from contextlib import redirect_stdout
 
 
 def model_evaluation(model, x_test, y_test, model_name, history=None):
@@ -19,7 +18,6 @@ def model_evaluation(model, x_test, y_test, model_name, history=None):
     pred_f.write('----------PREDICTION----------\n')
     np.savetxt(pred_f, Y_predict)
     pred_f.close()
-
 
     Accuracy = str(accuracy_score(y_test, Y_predict))
     MSE = str(mean_absolute_error(y_test, Y_predict))

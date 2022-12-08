@@ -14,7 +14,6 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Sentiment analysis smart bash runner.")
     parser._action_groups.pop()
     required = parser.add_argument_group('required arguments')
-    optional = parser.add_argument_group('optional arguments')
     required.add_argument('--model_name', nargs='?', required=True,
                           help='Specify the model name: LSTM, BiLSTM, BERT, RoBERTa')
     return parser.parse_args()
@@ -35,11 +34,9 @@ def main(args):
     else:
         print('Error: Model does not exist')
         return
-    history, X_test = model.Train()
-    loaded_model = DataLoading.model_loading(args.model_name)
-
+    model_loaded, history, X_test = model.Train()
     print('Results estimation')
-    ResultsEvaluation.model_evaluation(loaded_model, X_test, Y_test, args.model_name, history)
+    ResultsEvaluation.model_evaluation(model_loaded, X_test, Y_test, args.model_name, history)
     print('Completed')
 
 

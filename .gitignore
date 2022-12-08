@@ -130,3 +130,4 @@ dmypy.json
 .pyre/
 
 glove.42B.300d.zip
+.idea
