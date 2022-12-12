@@ -1,5 +1,5 @@
 # Sentiment analysis project
-This repository contains 4 models (LSTM, BiLSTM, BERT, RoBERTa) for sentiment analysis of tweets. 
+This repository contains 4 models (LSTM, BiLSTM, pretrained BERT, pretrained RoBERTa) for sentiment analysis of tweets. 
 > ### Project structure
 > #### There are 3 folders and 1 file at this level. Let's talk about the purpose of each of those.
 > - ./datasets -> Contains 10 file: 5 original datasets, 2 preprocessed training and 3 preprocessed testing datasets. The datasets were taken from Kaggle:
@@ -13,6 +13,8 @@ This repository contains 4 models (LSTM, BiLSTM, BERT, RoBERTa) for sentiment an
 >   + ./Models-folder with the files for models building
 > - main.py -> Is the execution script that will parse the commands you give from the terminal to your code.
 To execute the main.py file the command must have the argument --model_name <model_name>, where <model_name> has 4 options: LSTM, BiLSTM, BERT, RoBERTa
+
+Comment: The BERT and RoBERTa models are complex and have many parameters, so it is better to use Google Colab to train these models. 
 
 > ### Environment setup
 > #### Step 1
