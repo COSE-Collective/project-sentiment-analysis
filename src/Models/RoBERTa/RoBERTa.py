@@ -38,9 +38,10 @@ def create_model(bert_layer, max_len):
 
 
 class ROBERTA:
-    def __init__(self, data, max_len=512):
+    def __init__(self, data, max_len=512, size=30000):
         self.X_val, self.Y_val = None, None
         self.X_train, self.X_test, self.Y_train, self.Y_test = data
+        self.X_train, self.Y_train = self.X_train.head(size), self.Y_train.head(size)
         self.max_len = max_len
 
     def Train(self, epochs=5, batch_size=8, early_stop=False, patience=2, saving=False):

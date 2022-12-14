@@ -7,10 +7,6 @@ from transformers import TFBertModel, BertTokenizerFast
 def tokenize(data, max_len, tokenizer):
     input_ids = []
     attention_masks = []
-
-    aleqmsg = 'all inputs have the same length'
-
-    print("\n\nELEMENT LENGTH")
     for i in range(len(data)):
         encoded = tokenizer.encode_plus(
             data[i],
@@ -20,35 +16,7 @@ def tokenize(data, max_len, tokenizer):
             return_attention_mask=True
         )
         input_ids.append(encoded['input_ids'])
-        #print(np.shape(input_ids))
         attention_masks.append(encoded['attention_mask'])
-
-        if len(encoded['input_ids']) != 512:
-            aleqmsg = 'some inputs have a different length'
-            print("element " + str(i) + " has a different length: " + str(len(encoded['input_ids'])))
-
-    print(aleqmsg)
-
-        #if i >= len(data) - 10:
-        #    pepe = np.array(input_ids, dtype=object)
-        #    print(np.shape(input_ids))
-        #    print(np.shape(pepe))
-
-    try:
-        a = np.array(input_ids).reshape(len(data), 512)
-    except:
-        a = np.array(input_ids)
-
-    #print("\n\nInput_ids")
-    #print(input_ids[0])
-
-    b = np.array(attention_masks)
-    print("\n\nShape input_ids")
-    print(np.shape(a))
-    print("\nShape attention_masks")
-    print(np.shape(b))
-    print("\n\n")
-
     return np.array(input_ids), np.array(attention_masks)
 
 
@@ -72,9 +40,10 @@ def create_model(bert_layer, max_len):
 
 
 class BERT:
-    def __init__(self, data, max_len=512):
+    def __init__(self, data, max_len=512, size=30000):
         self.X_val, self.Y_val = None, None
         self.X_train, self.X_test, self.Y_train, self.Y_test = data
+        self.X_train, self.Y_train = self.X_train.head(size), self.Y_train.head(size)
         self.max_len = max_len
 
     def Train(self, epochs=9, batch_size=8, early_stop=True, patience=1, saving=False):

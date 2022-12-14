@@ -11,7 +11,7 @@ def dataset_loading():
     train_data2 = shuffle(train_data2)
     train_data = pd.concat([train_data1, train_data2])
     train_data = shuffle(train_data)
-    # train_data = train_data.head(2000)
+    train_data = train_data[(train_data['Tweet'].str.len() < 512)]
     X_train, Y_train = train_data['Tweet'], train_data['Sentiment']
 
     test_data1 = pd.read_csv('datasets/prepared_test1.csv')
@@ -19,6 +19,8 @@ def dataset_loading():
     test_data3 = pd.read_csv('datasets/prepared_test3.csv')
     test_data = pd.concat([test_data1, test_data2])
     test_data = pd.concat([test_data, test_data3])
+    test_data = test_data[(test_data['Tweet'].str.len() < 512)]
+
     # test_data = test_data.head(200)
     X_test, Y_test = test_data['Tweet'], test_data['Sentiment']
 
