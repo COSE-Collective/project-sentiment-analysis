@@ -1,4 +1,4 @@
-[![Python: 3839](https://img.shields.io/badge/python-3.8%20%7C%203.9-9cf)]()
+[![Python: 3839](https://img.shields.io/badge/python-3.8%20%7C%203.9-9cf)](https://docs.python.org/release/3.8.10/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blueviolet)](https://opensource.org/licenses/MIT)
 
 
