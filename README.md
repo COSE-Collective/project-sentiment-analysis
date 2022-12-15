@@ -22,7 +22,7 @@ To execute the main.py file the command must have two arguments:
    - --results_folder <folder_name>
 
 ## Disclaimer
-Because the implemented BERT and RoBERTa models are highly complex and have over 100M parameters, we recommend to use tools like Google Colab in case a memory overload occurs. 
+Because the implemented BERT and RoBERTa models are highly complex and have over 100M parameters, we recommend using tools like Google Colab in case a memory overload occurs. 
 
 ## License
 This repository is under MIT License.
