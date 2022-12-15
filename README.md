@@ -1,35 +1,32 @@
-![coselogo](https://github.com/COSE-Collective/project-sentiment-analysis/blob/master/coselogo.png)
+[![Python: 3839](https://img.shields.io/badge/python-3.8%20%7C%203.9-9cf)]()
+[![License: MIT](https://img.shields.io/badge/license-MIT-blueviolet)](https://opensource.org/licenses/MIT)
 
-# Sentiment analysis project
-This repository contains 4 models (LSTM, BiLSTM, pretrained BERT, pretrained RoBERTa) for sentiment analysis of tweets. 
-> ### Project structure
-> #### There are 2 folders and 1 file at this level. Let's talk about the purpose of each of those.
-> - ./datasets -> Contains 10 file: 5 original datasets, 2 preprocessed training and 3 preprocessed testing datasets. The datasets were taken from Kaggle:
->   + https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis 
->   + https://www.kaggle.com/datasets/abhi8923shriv/sentiment-analysis-dataset?select=testdata.manual.2009.06.14.csv
-> - ./src -> This folder contains following subfolders:
->   + ./DataPreprocessing-folder with the files for preprocessing the datasets
->   + ./Evaluation-folder with the files for results evaluation and drawing plots
->   + ./DataLoading-folder with the file for data and models loading
->   + ./Models-folder with the files for models building
-> - main.py -> Is the execution script that will parse the commands you give from the terminal to your code.
-To execute the main.py file the command must have two argument:
->   - --model_name <model_name>, where <model_name> has 4 options: LSTM, BiLSTM, BERT, RoBERTa
->   - --results_folder <folder_name>
 
-Comment: The BERT and RoBERTa models are complex and have many parameters, so it is better to use Google Colab to train these models. 
+# Project Sentiment Analysis
 
-> ### Environment setup
-> #### Step 1
-> Make sure you are on the directory level of this README file.
-> #### Step 2
-> Create a venv with python with the following command:\
-> *python3 -m venv /path/to/new/virtual/environment*\
-> In this case we can set the path to: *./venv*
-> #### Step 3
-> Install all the packages needed for the challenge with the following command:\
-> *pip install -r requirements.txt*
-> #### Step 4
-> Activate the environment in your terminal:\
-> *source ./venv/bin/activate*\
-> You will see that (venv) has appeared in the beginning of your terminal line. With that you know the python environment in which you are operating in that terminal.
+This repository contains 4 models (LSTM, BiLSTM, pre-trained BERT, pre-trained RoBERTa) for tweet/short post sentiment analysis.
+
+## Project structure
+### There are 2 folders and 1 file at this level. Let's talk about the purpose of each of those.
+ - **./datasets** -> Contains 10 files: 5 original datasets, 2 pre-processed training and 3 pre-processed testing datasets. The datasets were taken from Kaggle:
+   + https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis 
+   + https://www.kaggle.com/datasets/abhi8923shriv/sentiment-analysis-dataset?select=testdata.manual.2009.06.14.csv
+ - **./src** -> This folder contains the following subfolders:
+   + **./DataPreprocessing** folder with the files for pre-processing the datasets.
+   + **./Evaluation** folder with the files for results evaluation and drawing plots.
+   + **./DataLoading** folder with the file for data and models loading.
+   + **./Models** folder with the files that build the models.
+ - ***main.py*** -> Is the execution script that will parse the commands you give from the terminal to your code.
+To execute the main.py file the command must have two arguments:
+   - --model_name <model_name>, where <model_name> has 4 options: LSTM, BiLSTM, BERT, RoBERTa
+   - --results_folder <folder_name>
+
+## Disclaimer
+Because the implemented BERT and RoBERTa models are highly complex and have over 100M parameters, we recommend to use tools like Google Colab in case a memory overload occurs. 
+
+## License
+This repository is under MIT License.
+
+<p align="center">
+  <img src="https://github.com/COSE-Collective/project-sentiment-analysis/blob/master/coselogo.png">
+</p>
