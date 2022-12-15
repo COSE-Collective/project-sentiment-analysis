@@ -11,7 +11,9 @@ This repository contains 4 models (LSTM, BiLSTM, pretrained BERT, pretrained RoB
 >   + ./DataLoading-folder with the file for data and models loading
 >   + ./Models-folder with the files for models building
 > - main.py -> Is the execution script that will parse the commands you give from the terminal to your code.
-To execute the main.py file the command must have the argument --model_name <model_name>, where <model_name> has 4 options: LSTM, BiLSTM, BERT, RoBERTa
+To execute the main.py file the command must have two argument:
+>   - --model_name <model_name>, where <model_name> has 4 options: LSTM, BiLSTM, BERT, RoBERTa
+>   - --results_folder <folder_name>
 
 Comment: The BERT and RoBERTa models are complex and have many parameters, so it is better to use Google Colab to train these models. 
 
