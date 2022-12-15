@@ -27,6 +27,13 @@ Because the implemented BERT and RoBERTa models are highly complex and have over
 ## License
 This repository is under MIT License.
 
+## References
+- LSTM: https://ieeexplore.ieee.org/abstract/document/7778967
+- BiLSTM: https://ieeexplore.ieee.org/abstract/document/8684825
+- BERT: https://arxiv.org/abs/1810.04805
+- RoBERTa: https://arxiv.org/abs/1907.11692
+
+
 <p align="center">
   <img src="https://github.com/COSE-Collective/project-sentiment-analysis/blob/master/coselogo.png">
 </p>
