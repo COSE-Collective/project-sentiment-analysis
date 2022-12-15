@@ -20,22 +20,20 @@ def dataset_loading():
     test_data = pd.concat([test_data1, test_data2])
     test_data = pd.concat([test_data, test_data3])
     test_data = test_data[(test_data['Tweet'].str.len() < 512)]
-
-    # test_data = test_data.head(200)
     X_test, Y_test = test_data['Tweet'], test_data['Sentiment']
 
     data = pd.concat([train_data, test_data])
     return X_train, X_test, Y_train, Y_test, data
 
 
-def model_loading(model_name):
+def model_loading(model_name, path="results"):
     model = None
     if model_name == "LSTM" or model_name == "BiLSTM":
-        model = tf.keras.models.load_model('src/Models/' + model_name + '/' + model_name + '.h5')
+        model = tf.keras.models.load_model(path+'/' + model_name + '/' + model_name + '.h5')
     elif model_name == "BERT":
-        model = tf.keras.models.load_model('src/Models/' + model_name + '/' + model_name + '.h5',
+        model = tf.keras.models.load_model(path+'/' + model_name + '/' + model_name + '.h5',
                                            custom_objects={'TFBertModel': TFBertModel})
     elif model_name == "RoBERTa":
-        model = tf.keras.models.load_model('src/Models/' + model_name + '/' + model_name + '.h5',
+        model = tf.keras.models.load_model(path+'/' + model_name + '/' + model_name + '.h5',
                                            custom_objects={'TFRobertaModel': TFRobertaModel})
     return model

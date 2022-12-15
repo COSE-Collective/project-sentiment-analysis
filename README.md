@@ -5,7 +5,6 @@ This repository contains 4 models (LSTM, BiLSTM, pretrained BERT, pretrained RoB
 > - ./datasets -> Contains 10 file: 5 original datasets, 2 preprocessed training and 3 preprocessed testing datasets. The datasets were taken from Kaggle:
 >   + https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis 
 >   + https://www.kaggle.com/datasets/abhi8923shriv/sentiment-analysis-dataset?select=testdata.manual.2009.06.14.csv
-> - ./results -> This folder contains the results of models evaluation and divided into 4 subfolders for each model. Each model has the following results: file with probability values(./probabilities.txt), file with prediction values(./predictions.txt), file with results(./results.txt), accuracy and loss  plots (./plots/accuracy.png, ./plots/loss.png)
 > - ./src -> This folder contains following subfolders:
 >   + ./DataPreprocessing-folder with the files for preprocessing the datasets
 >   + ./Evaluation-folder with the files for results evaluation and drawing plots

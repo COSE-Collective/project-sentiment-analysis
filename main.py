@@ -5,6 +5,8 @@ import src.Loading.DataLoading as DataLoading
 import src.Evaluation.ResultsEvaluation as ResultsEvaluation
 from src.Models.BERT.BERT import BERT
 from src.Models.RoBERTa.RoBERTa import ROBERTA
+import os
+
 
 def parse_args():
     """
@@ -16,10 +18,15 @@ def parse_args():
     required = parser.add_argument_group('required arguments')
     required.add_argument('--model_name', nargs='?', required=True,
                           help='Specify the model name: LSTM, BiLSTM, BERT, RoBERTa')
+    required.add_argument('--results_folder', nargs='?', required=True,
+                          help='Specify the name of the results folder')
     return parser.parse_args()
 
 
 def main(args):
+    path = args.results_folder
+    if not os.path.isdir(path):
+        os.mkdir(path)
     X_train, X_test, Y_train, Y_test, dataset = DataLoading.dataset_loading()
     data = [X_train, X_test, Y_train, Y_test]
 
@@ -34,9 +41,9 @@ def main(args):
     else:
         print('Error: Model does not exist')
         return
-    model_loaded, history, X_test = model.Train()
+    model_loaded, history, X_test = model.Train(path=path)
     print('Results estimation')
-    ResultsEvaluation.model_evaluation(model_loaded, X_test, Y_test, args.model_name, history)
+    ResultsEvaluation.model_evaluation(model_loaded, X_test, Y_test, args.model_name, history, path)
     print('Completed')
 
 

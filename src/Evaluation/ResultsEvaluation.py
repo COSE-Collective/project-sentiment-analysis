@@ -2,19 +2,22 @@ from sklearn.metrics import accuracy_score, f1_score, classification_report, mea
     recall_score
 import src.Evaluation.Plotting as Plotting
 import numpy as np
+import os
 
 
-def model_evaluation(model, x_test, y_test, model_name, history=None):
-    Plotting.plotting(history, model_name)
+def model_evaluation(model, x_test, y_test, model_name, history=None, path="results"):
+    if not os.path.isdir(path + "/" + model_name):
+        os.mkdir(path+"/"+model_name)
+    Plotting.plotting(history, model_name, path)
 
     Y_prob = model.predict(x_test)
-    prob_file = open('results/' + model_name + '/probabilities.txt', 'w')
+    prob_file = open(path+'/' + model_name + '/probabilities.txt', 'w')
     prob_file.write('----------PROBABILITY----------\n')
     np.savetxt(prob_file, Y_prob)
     prob_file.close()
 
     Y_predict = np.argmax(Y_prob, axis=1)
-    pred_f = open('results/' + model_name + '/predictions.txt', 'w')
+    pred_f = open(path+'/' + model_name + '/predictions.txt', 'w')
     pred_f.write('----------PREDICTION----------\n')
     np.savetxt(pred_f, Y_predict)
     pred_f.close()
@@ -41,7 +44,7 @@ def model_evaluation(model, x_test, y_test, model_name, history=None):
     print("Recall:", Recall)
     print("F1_score:", F1_score)
     print("Classification Report: " + '\n' + Clf_report)
-    res_file = open('results/' + model_name + '/results.txt', 'w')
+    res_file = open(path+'/' + model_name + '/results.txt', 'w')
     res_file.write('----------MODEL DESCRIPTION----------')
     res_file.write('\nModel name: ' + str(model_name))
     res_file.write('\nThe best number of epochs: ' + str(epochs))

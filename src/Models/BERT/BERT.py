@@ -46,7 +46,7 @@ class BERT:
         self.X_train, self.Y_train = self.X_train.head(size), self.Y_train.head(size)
         self.max_len = max_len
 
-    def Train(self, epochs=9, batch_size=8, early_stop=True, patience=1, saving=False):
+    def Train(self, epochs=9, batch_size=8, early_stop=True, patience=1, saving=False, path="results"):
         self.X_train, self.X_val, self.Y_train, self.Y_val = train_test_split(self.X_train, self.Y_train, test_size=0.3,
                                                                               random_state=42)
         self.X_train.reset_index(drop=True, inplace=True)
@@ -79,6 +79,6 @@ class BERT:
         print('Model successfully trained')
         if saving:
             print('Model saving')
-            bert_model.save('src/Models/BERT/BERT.h5')
+            bert_model.save(path + '/BERT/BERT.h5')
             print('Model saved')
         return bert_model, history_bert, [test_input_ids, test_attention_masks]

@@ -44,10 +44,9 @@ class ROBERTA:
         self.X_train, self.Y_train = self.X_train.head(size), self.Y_train.head(size)
         self.max_len = max_len
 
-    def Train(self, epochs=5, batch_size=8, early_stop=False, patience=2, saving=False):
+    def Train(self, epochs=5, batch_size=8, early_stop=False, patience=2, saving=False, path="results"):
         self.X_train, self.X_val, self.Y_train, self.Y_val = train_test_split(self.X_train, self.Y_train, test_size=0.3,
                                                                               random_state=42)
-        print(len(self.X_train), len(self.X_val), len(self.X_test))
         self.X_train.reset_index(drop=True, inplace=True)
         self.X_test.reset_index(drop=True, inplace=True)
         self.X_val.reset_index(drop=True, inplace=True)
@@ -79,7 +78,7 @@ class ROBERTA:
         print('Model successfully trained')
         if saving:
             print('Model saving')
-            roberta_model.save('src/Models/RoBERTa/RoBERTa.h5')
+            roberta_model.save(path + '/RoBERTa/RoBERTa.h5')
             print('Model saved')
 
         return roberta_model, history_roberta, [test_input_ids, test_attention_masks]

@@ -14,10 +14,10 @@ class BiLSTM:
         self.X_train, self.X_test, self.Y_train, self.Y_test = data
         self.num_words = num_words
 
-    def Train(self, epochs=20, batch_size=128, early_stop=True, patience=2, saving=False):
+    def Train(self, epochs=20, batch_size=128, early_stop=True, patience=2, saving=False, path="results"):
         self.X_train, self.X_val, self.Y_train, self.Y_val = train_test_split(self.X_train, self.Y_train, test_size=0.3,
                                                                               random_state=42)
-
+        print("TRAIN:" + str(len(self.X_train)), "VALIDATION:" + str(len(self.X_val)), "TEST:" + str(len(self.X_test)))
         tokenizer = tf.keras.preprocessing.text.Tokenizer(num_words=self.num_words)
         tokenizer.fit_on_texts(self.X_train)
 
@@ -71,6 +71,6 @@ class BiLSTM:
         print('Model successfully trained')
         if saving:
             print('Model saving')
-            model.save('src/Models/BiLSTM/BiLSTM.h5')
+            model.save(path + '/BiLSTM/BiLSTM.h5')
             print('Model saved')
         return model, history, self.X_test
