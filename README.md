@@ -1,3 +1,5 @@
+![coselogo](https://github.com/COSE-Collective/project-sentiment-analysis/blob/master/coselogo.png)
+
 # Sentiment analysis project
 This repository contains 4 models (LSTM, BiLSTM, pretrained BERT, pretrained RoBERTa) for sentiment analysis of tweets. 
 > ### Project structure
