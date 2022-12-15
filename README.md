@@ -1,7 +1,7 @@
 # Sentiment analysis project
 This repository contains 4 models (LSTM, BiLSTM, pretrained BERT, pretrained RoBERTa) for sentiment analysis of tweets. 
 > ### Project structure
-> #### There are 3 folders and 1 file at this level. Let's talk about the purpose of each of those.
+> #### There are 2 folders and 1 file at this level. Let's talk about the purpose of each of those.
 > - ./datasets -> Contains 10 file: 5 original datasets, 2 preprocessed training and 3 preprocessed testing datasets. The datasets were taken from Kaggle:
 >   + https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis 
 >   + https://www.kaggle.com/datasets/abhi8923shriv/sentiment-analysis-dataset?select=testdata.manual.2009.06.14.csv
